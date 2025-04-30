@@ -1,0 +1,467 @@
+/* General Styles */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #FDF6E3;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header & Navigation */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #008080;
+    padding: 15px 40px;
+    color: white;
+    position: relative; /* Ensures content stays within header */
+    z-index: 1000;
+    height: 85px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo img {
+    max-width: 60px;
+    height: auto;
+    border-radius: 50%;
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+}
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+        
+    }
+
+    
+    
+
+    .logo img {
+        max-width: 50px; /* Adjust for mobile */
+        
+    }
+
+    .hamburger {
+        z-index: 1001; /* Ensure it's above other elements */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Push below the header */
+        left: 0;
+        width: 100%;
+    }
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: url('hero-background.jpg') no-repeat center center/cover;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+    color: black; 
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #4a90e2;
+}
+
+/* About Page */
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: #ADD8E6;
+}
+
+.about-content {
+    display: flex;
+    max-width: 900px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.about-text {
+    padding: 20px;
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Resume Page */
+.resume-container {
+    max-width: 800px;
+    margin: 50px auto;  /* Centers the content */
+    padding: 30px;  /* Adds space inside the box */
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: left; /* Align text properly */
+}
+
+/* Header & Links */
+.resume-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.resume-container p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.resume-content {
+    margin-top: 20px;
+}
+
+.resume-content h2, h3 {
+    color: #008080;
+    margin-top: 20px;
+}
+
+.resume-content ul {
+    list-style: disc;
+    margin-left: 25px; /* Adds indentation for lists */
+}
+
+.resume-container a.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #FFD700;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.resume-container a.btn:hover {
+    background: #FFA500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .resume-container {
+        padding: 20px;
+        margin: 30px auto;
+    }
+
+    .resume-container h1 {
+        font-size: 2em;
+    }
+
+    .resume-container p {
+        font-size: 1em;
+    }
+}
+
+
+/* Project Cards */
+
+.card-section {
+    padding: 50px 20px;
+    background-color: #fef6e4; /* Light background */
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjust column layout */
+    gap: 20px; /* Space between cards */
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Individual Project Cards */
+.card {
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    height: 180px; /* Consistent card height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Project Title */
+.card h3 {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #5a3e13;
+    flex: 1; /* Ensure title is left-aligned */
+    text-align: left;
+}
+
+/* Plus Sign for Links */
+.plus-sign {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #a77b5f;
+    text-decoration: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.plus-sign:hover {
+    color: #008080;
+}
+
+/* Unique Background Colors for Each Card */
+.card:nth-child(1) { background-color: #f9e4d8; } /* Light peach */
+.card:nth-child(2) { background-color: #d8e4f9; } /* Light blue */
+.card:nth-child(3) { background-color: #e4f9d8; } /* Light green */
+.card:nth-child(4) { background-color: #f9e4d8; } /* Light peach */
+.card:nth-child(5) { background-color: #e4d8f9; } /* Light lavender */
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* One column layout for mobile */
+    }
+
+    .card {
+        height: auto; /* Let cards adjust dynamically */
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+    }
+}
+
+
+/* Contact Form */
+.contact-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.contact-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.contact-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 95%; /* Keep all inputs same width */
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.contact-container textarea {
+    resize: none; /* Prevent resizing */
+    height: 120px; /* Set a fixed height */
+}
+
+.contact-container button {
+    width: 95%; /* Make it same width as inputs */
+    padding: 12px;
+    background: #008080;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-container button:hover {
+    background: #005f5f;
+}
+
+/* Default Navigation (Desktop) */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        height: auto;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 80%;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        z-index: 1000;
+        background: none;
+        border: none;
+        padding: 10px;
+    }
+    .hamburger div {
+        width: 30px;
+        height: 3px;
+        background: white;
+        margin: 5px 0;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #008080;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+        text-align: center;
+        z-index: 999;
+    }
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .nav-links.active {
+        display: flex; /* Show menu when active */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
+.buttons {
+    margin-top: 20px; /* Adds space above buttons */
+    display: flex;
+    flex-wrap: wrap; /* Allows buttons to stack on smaller screens */
+    justify-content: center; /* Centers the buttons */
+    gap: 10px; /* Adds space between buttons */
+}
+
+.buttons .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 2px solid black;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    transition: 0.3s;
+}
+
+.buttons .btn:hover {
+    background: black;
+    color: white;
+}
+/* Responsive Fix */
+@media (max-width: 480px) {
+    .contact-container {
+        max-width: 90%;
+    }
+
+    .contact-container input,
+    .contact-container textarea,
+    .contact-container button {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
